@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".login"
+    android:background="@color/backgroundcolor"
+    >
+
+    <ImageView
+        android:layout_marginTop="200px"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"
+        android:layout_width="403px"
+        android:layout_height="287px" />
+
+    <EditText
+        android:layout_width="832px"
+        android:layout_height="162px"
+        android:layout_gravity="center"
+        android:layout_marginTop="300px"
+        android:background="@drawable/kotakedittext"
+        android:fontFamily="@font/futuramedium"
+        android:text="Email"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:layout_marginTop="50px"
+        android:layout_gravity="center"
+        android:layout_width="832px"
+        android:layout_height="162px"
+        android:background="@drawable/kotakedittext"
+        />
+
+    <Button
+        android:layout_marginTop="150px"
+        android:layout_gravity="center"
+        android:layout_width="832px"
+        android:layout_height="170px"
+        android:background="@drawable/button"
+        />
+
+</LinearLayout>
