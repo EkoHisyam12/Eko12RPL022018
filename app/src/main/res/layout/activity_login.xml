@@ -6,40 +6,134 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".login"
-    android:background="@color/backgroundcolor"
-    >
+    android:gravity="center"
+    android:background="@color/backgroundcolor">
 
     <ImageView
-        android:layout_marginTop="200px"
-        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/logo"
-        android:layout_width="403px"
-        android:layout_height="287px" />
+        android:layout_marginBottom="50dp"/>
 
-    <EditText
-        android:layout_width="832px"
-        android:layout_height="162px"
-        android:layout_gravity="center"
-        android:layout_marginTop="300px"
-        android:background="@drawable/kotakedittext"
-        android:fontFamily="@font/futuramedium"
-        android:text="Email"
-        android:textColor="#ffffff" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
 
-    <EditText
-        android:layout_marginTop="50px"
-        android:layout_gravity="center"
-        android:layout_width="832px"
-        android:layout_height="162px"
-        android:background="@drawable/kotakedittext"
-        />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:fontFamily="@font/futuramedium"
+                android:layout_marginStart="25dp"/>
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="25dp"
+                android:background="@android:color/white"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:fontFamily="@font/futuramedium"/>
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:background="@drawable/shape"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:background="@color/darkblue">
+
+        <EditText
+            android:inputType="textEmailAddress"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="@android:color/white"
+            android:id="@+id/tfEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:fontFamily="@font/futuramedium"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="40dp"
+        android:background="@color/darkblue">
+
+            <EditText
+                android:inputType="textPassword"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:hint="Passwor"
+                android:fontFamily="@font/futuramedium"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lupa Password?"
+        android:layout_marginHorizontal="40dp"
+        android:textColor="@color/colorAccent"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="end"
+        android:textSize="15sp"
+        android:fontFamily="@font/futuramedium"/>
 
     <Button
-        android:layout_marginTop="150px"
-        android:layout_gravity="center"
-        android:layout_width="832px"
-        android:layout_height="170px"
-        android:background="@drawable/button"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Login"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:fontFamily="@font/futuramedium"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:background="@drawable/button"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Belum punya akun"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/futuramedium"/>
 
 </LinearLayout>
