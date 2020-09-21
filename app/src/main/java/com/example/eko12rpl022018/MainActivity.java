@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 if(tfNohp.getEditText().getText().toString().length() < 1 || tfAlamat.getEditText().getText().toString().length() < 1 || tfNoktp.getEditText().getText().toString().length() < 1 ){
                     Toast.makeText(MainActivity.this, "isi semua data", Toast.LENGTH_SHORT).show();
                 }else {
-                    AndroidNetworking.post("http://192.168.43.211/RentalSepeda/login.php")
+                    AndroidNetworking.post("http://192.168.43.225/RentalSepeda/Registrasi.php")
                             .addBodyParameter("email", email)
                             .addBodyParameter("nama", nama)
                             .addBodyParameter("password", password)

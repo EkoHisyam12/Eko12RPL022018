@@ -91,7 +91,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="40dp"
         android:background="@color/darkblue">
 
@@ -123,12 +123,12 @@
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="Login"
         android:textColor="@android:color/white"
         android:textSize="15sp"
         android:fontFamily="@font/futuramedium"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_marginHorizontal="50dp"
         android:background="@drawable/button"/>
 

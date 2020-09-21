@@ -8,30 +8,56 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-public class dashboard extends AppCompatActivity {
+public class admin extends AppCompatActivity {
 
     SharedPreferences sp;
-    ImageView btnLogout;
+    Button btnData, btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_admin);
 
-        btnLogout = (ImageView) findViewById(R.id.btnLogout);
+        btnData = findViewById(R.id.btnData);
+        btnLogout = findViewById(R.id.btnLogout);
+
+        btnData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(admin.this, datacostumer.class);
+                startActivity(intent);
+            }
+        });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sp = getSharedPreferences("login", MODE_PRIVATE);
+                sp.edit().putBoolean("logged", false).apply();
+                Intent intent = new Intent(admin.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menutoolbar, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        //if (item.getItemId() == R.id.miCompose) {
+        if (item.getItemId() == R.id.miCompose) {
             new AlertDialog.Builder(this)
                     .setTitle("Really Logout?")
                     .setMessage("Are you sure you want to logout?")
@@ -39,16 +65,16 @@ public class dashboard extends AppCompatActivity {
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
                         public void onClick(DialogInterface arg0, int arg1) {
-                            sp = getSharedPreferences("login",MODE_PRIVATE);
-                            sp.edit().putBoolean("logged",false).apply();
-                            Intent intent = new Intent(dashboard.this, MainActivity.class);
+                            sp = getSharedPreferences("login", MODE_PRIVATE);
+                            sp.edit().putBoolean("logged", false).apply();
+                            Intent intent = new Intent(admin.this, MainActivity.class);
                             startActivity(intent);
                             finish();
                         }
                     }).create().show();
             return true;
-        //}
-      //  return super.onOptionsItemSelected(item);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -60,9 +86,8 @@ public class dashboard extends AppCompatActivity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface arg0, int arg1) {
-                        dashboard.super.onBackPressed();
+                        admin.super.onBackPressed();
                     }
                 }).create().show();
     }
-
 }

@@ -57,7 +57,7 @@ public class admin extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.miCompose) {
+       // if (item.getItemId() == R.id.miCompose) {
             new AlertDialog.Builder(this)
                     .setTitle("Really Logout?")
                     .setMessage("Are you sure you want to logout?")
@@ -73,8 +73,8 @@ public class admin extends AppCompatActivity {
                         }
                     }).create().show();
             return true;
-        }
-        return super.onOptionsItemSelected(item);
+       // }
+      //  return super.onOptionsItemSelected(item);
     }
 
     @Override

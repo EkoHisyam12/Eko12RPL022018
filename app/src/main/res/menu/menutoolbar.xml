@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/miCompose"
-        android:icon="@drawable/quit"
-        app:showAsAction="ifRoom"
-        android:title="Compose">
-    </item>
+    <item android:title="Logout" />
+    <item android:title="Item" />
 </menu>
