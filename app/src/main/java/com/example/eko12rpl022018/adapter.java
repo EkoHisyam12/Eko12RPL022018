@@ -1,5 +1,6 @@
 package com.example.eko12rpl022018;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,9 +32,22 @@ public class adapter extends RecyclerView.Adapter<adapter.UserViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final UserViewHolder holder, final int position) {
         holder.tvNama.setText(dataList.get(position).getNama());
         holder.tvEmail.setText(dataList.get(position).getEmail());
+        holder.cvInbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(holder.itemView.getContext(), edit_data_costumer.class);
+                in.putExtra("id", dataList.get(position).getId());
+                in.putExtra("nama", dataList.get(position).getNama());
+                in.putExtra("email", dataList.get(position).getEmail());
+                in.putExtra("nohp", dataList.get(position).getNohp());
+                in.putExtra("alamat", dataList.get(position).getAlamat());
+                in.putExtra("noktp", dataList.get(position).getNoktp());
+                holder.itemView.getContext().startActivity(in);
+            }
+        });
     }
 
     @Override

@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -17,7 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class admin extends AppCompatActivity {
 
     SharedPreferences sp;
-    Button btnData, btnLogout;
+    Button btnData;
+    ImageView btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +40,53 @@ public class admin extends AppCompatActivity {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sp = getSharedPreferences("login", MODE_PRIVATE);
-                sp.edit().putBoolean("logged", false).apply();
-                Intent intent = new Intent(admin.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                showDialog();
             }
         });
+    }
 
+    private void showDialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Really Logout?");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Are you sure you want to logout?")
+                .setCancelable(false)
+                .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        // jika tombol diklik, maka akan menutup activity ini
+                        sp = getSharedPreferences("RENTALSEPEDA", MODE_PRIVATE);
+                        sp.edit()
+                                .putString("USERID", "")
+                                .putString("USERNAME", "")
+                                .putString("ROLEUSER", "")
+                                .putString("EMAIL", "")
+                                .putString("KTP", "")
+                                .putString("PHONE", "")
+                                .putString("ALAMAT", "")
+                                .apply();
+                        Intent intent = new Intent(admin.this, login.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // jika tombol ini diklik, akan menutup dialog
+                        // dan tidak terjadi apa2
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
     }
 
     @Override

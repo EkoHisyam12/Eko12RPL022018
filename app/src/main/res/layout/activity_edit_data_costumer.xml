@@ -4,134 +4,223 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/backgroundcolor"
+    android:orientation="vertical"
     tools:context=".edit_data_costumer">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="Edit Data"
         android:background="#0d0f11"
+        app:title="Info Costumer"
         app:titleTextColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/tvId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"
-        android:textSize="20dp"
-        android:textColor="#ffff"
         android:fontFamily="@font/futuramedium"
-        android:textStyle="bold"
-        android:text="Id : "/>
+        android:text="Id : "
+        android:textColor="#ffff"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"
-        android:background="@color/darkblue"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/etNama"
-            android:inputType="textEmailAddress"
-            android:textSize="15dp"
-            android:fontFamily="@font/futuramedium"
-            android:layout_marginHorizontal="5dp"
-            android:hint="Nama" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:paddingTop="10dp"
+            android:background="@color/darkblue">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:textColor="#ffff"
+                android:enabled="false"
+                android:id="@+id/etNama"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="@font/futuramedium"
+                android:hint="Nama"
+                android:inputType="textEmailAddress"
+                android:textSize="15dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"
-        android:background="@color/darkblue"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/eNama"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/editdata" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/etEmail"
-            android:inputType="textEmailAddress"
-            android:fontFamily="@font/futuramedium"
-            android:layout_marginHorizontal="5dp"
-            android:textSize="15dp"
-            android:hint="Email" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:paddingTop="10dp"
+            android:background="@color/darkblue">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:textColor="#ffff"
+                android:enabled="false"
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="@font/futuramedium"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textSize="15dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"
-        android:background="@color/darkblue"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/eEmail"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/editdata" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/etNohp"
-            android:inputType="textEmailAddress"
-            android:fontFamily="@font/futuramedium"
-            android:layout_marginHorizontal="5dp"
-            android:textSize="15dp"
-            android:hint="No HP" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:paddingTop="10dp"
+            android:background="@color/darkblue">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:textColor="#ffff"
+                android:enabled="false"
+                android:id="@+id/etNohp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="@font/futuramedium"
+                android:hint="No HP"
+                android:inputType="textEmailAddress"
+                android:textSize="15dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"
-        android:background="@color/darkblue"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/eNohp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/editdata" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:id="@+id/etAlamat"
-            android:inputType="textEmailAddress"
-            android:fontFamily="@font/futuramedium"
-            android:textSize="15dp"
-            android:hint="Alamat" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:paddingTop="10dp"
+            android:background="@color/darkblue">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:textColor="#ffff"
+                android:enabled="false"
+                android:id="@+id/etAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="@font/futuramedium"
+                android:hint="Alamat"
+                android:inputType="textEmailAddress"
+                android:textSize="15dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"
-        android:background="@color/darkblue"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/eAlamat"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/editdata" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:id="@+id/etNoktp"
-            android:inputType="textEmailAddress"
-            android:fontFamily="@font/futuramedium"
-            android:textSize="15dp"
-            android:hint="No KTP" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:paddingTop="10dp"
+            android:background="@color/darkblue">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:textColor="#ffff"
+                android:enabled="false"
+                android:id="@+id/etNoktp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="@font/futuramedium"
+                android:hint="No KTP"
+                android:inputType="textEmailAddress"
+                android:textSize="15dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/eNoktp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/editdata" />
+    </LinearLayout>
 
     <Button
+        android:layout_gravity="center"
+        android:visibility="gone"
         android:id="@+id/btnEdit"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
         android:layout_margin="20dp"
-        android:textSize="20dp"
+        android:background="@drawable/button"
         android:fontFamily="@font/futuramedium"
         android:text="Edit"
-        android:background="@drawable/button"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white"
+        android:textSize="20dp" />
 
 </LinearLayout>

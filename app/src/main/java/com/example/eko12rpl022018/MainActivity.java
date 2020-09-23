@@ -2,7 +2,10 @@ package com.example.eko12rpl022018;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     TextInputLayout tfNama, tfEmail, tfPassword,tfPasswordConfirm,  tfNoktp, tfAlamat, tfNohp;
     TextView tvSebelum, tvLogin;
     String nama, email, password, confirmPassword;
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                             .addBodyParameter("nohp", tfNohp.getEditText().getText().toString())
                             .addBodyParameter("noktp", tfNoktp.getEditText().getText().toString())
                             .addBodyParameter("alamat", tfAlamat.getEditText().getText().toString())
-                            .addBodyParameter("roleuser", "2")
+                            .addBodyParameter("roleuser", "1")
                             .setTag("test")
                             .setPriority(Priority.MEDIUM)
                             .build()
@@ -110,10 +114,11 @@ public class MainActivity extends AppCompatActivity {
                                         Log.d("RBA", "url: " + hasil.toString());
                                         Boolean respon = hasil.getBoolean("respon");
                                         if (respon) {
-                                            Toast.makeText(MainActivity.this, "Sukses Login", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getApplicationContext(), dashboard.class));
+                                            Toast.makeText(MainActivity.this, "Sukses Register", Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(getApplicationContext(), login.class));
+
                                         } else {
-                                            Toast.makeText(MainActivity.this, "Gagal Login", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(MainActivity.this, "Gagal Reister", Toast.LENGTH_SHORT).show();
                                         }
 
                                     } catch (JSONException e) {

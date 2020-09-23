@@ -12,8 +12,7 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/logo"
-        android:layout_marginBottom="15dp"/>
+        android:src="@drawable/logo"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,6 +70,7 @@
         android:id="@+id/tfNama"
         android:visibility="visible"
         android:layout_marginHorizontal="40dp"
+        android:paddingTop="10dp"
         android:background="@color/darkblue">
 
         <EditText
@@ -91,6 +91,7 @@
         android:id="@+id/tfEmail"
         android:visibility="visible"
         android:layout_marginTop="10dp"
+        android:paddingTop="10dp"
         android:background="@color/darkblue">
 
         <EditText
@@ -112,6 +113,7 @@
         android:id="@+id/tfPassword"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="40dp"
+        android:paddingTop="10dp"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="#fff"
         android:background="@color/darkblue">
@@ -135,6 +137,7 @@
         android:id="@+id/tfPasswordConfirm"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="40dp"
+        android:paddingTop="10dp"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="#ffffff"
         android:background="@color/darkblue">
@@ -156,6 +159,7 @@
         android:visibility="gone"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
+        android:paddingTop="10dp"
         android:id="@+id/tfNoktp"
         android:background="@color/darkblue">
 
@@ -175,6 +179,7 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:layout_marginHorizontal="40dp"
+        android:paddingTop="10dp"
         android:id="@+id/tfAlamat"
         android:layout_marginTop="10dp"
         android:background="@color/darkblue">
@@ -197,6 +202,7 @@
         android:id="@+id/tfNohp"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="40dp"
+        android:paddingTop="10dp"
         android:background="@color/darkblue">
 
         <EditText

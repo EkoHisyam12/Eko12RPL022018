@@ -27,6 +27,57 @@ public class dashboard extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
         btnLogout = (ImageView) findViewById(R.id.btnLogout);
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialog();
+            }
+        });
+    }
+
+    private void showDialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Really Logout?");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Are you sure you want to logout?")
+                .setCancelable(false)
+                .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        // jika tombol diklik, maka akan menutup activity ini
+                        sp = getSharedPreferences("RENTALSEPEDA", MODE_PRIVATE);
+                        sp.edit()
+                                .putString("USERID", "")
+                                .putString("USERNAME", "")
+                                .putString("ROLEUSER", "")
+                                .putString("EMAIL", "")
+                                .putString("KTP", "")
+                                .putString("PHONE", "")
+                                .putString("ALAMAT", "")
+                                .apply();
+                        Intent intent = new Intent(dashboard.this, login.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // jika tombol ini diklik, akan menutup dialog
+                        // dan tidak terjadi apa2
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
     }
 
     @Override

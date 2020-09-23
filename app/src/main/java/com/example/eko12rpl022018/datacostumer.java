@@ -1,10 +1,13 @@
 package com.example.eko12rpl022018;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -42,62 +45,72 @@ public class datacostumer extends AppCompatActivity {
         cvInbox = findViewById(R.id.cvInbox);
         recyclerView = findViewById(R.id.listCustomer);
 
-        datalist = new ArrayList<>();
-        Log.d("geo", "onCreate: ");
+        getDataCostumer();
+    }
 
-        AndroidNetworking.post( "http://192.168.43.211/RentalSepeda/ViewData.php")
-                .addBodyParameter("roleuser", "2")
-                .setTag("test")
-                .setPriority(Priority.MEDIUM)
-                .build()
-                .getAsJSONObject(new JSONObjectRequestListener() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray data = response.getJSONArray("PAYLOAD");
+    private void getDataCostumer() {
+    datalist = new ArrayList<>();
+    Log.d("geo", "onCreate: ");
 
-                            for (int i = 0; i < data.length(); i++) {
+    AndroidNetworking.post("http:///192.168.43.225/RentalSepeda/ViewData.php")
+            .setTag("test")
+            .setPriority(Priority.MEDIUM)
+            .build()
+            .getAsJSONObject(new JSONObjectRequestListener() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    try {
+                        JSONArray data = response.getJSONArray("result");
 
+                        for (int i = 0; i < data.length(); i++) {
 
-                                model model = new model();
-                                JSONObject object = data.getJSONObject(i);
-                                model.setNama(object.getString("nama"));
-                                model.setEmail(object.getString("email"));
-                                datalist.add(model);
+                            JSONObject object = data.getJSONObject(i);
+                            model model = new model();
+                            model.setAlamat(object.getString("alamat"));
+                            model.setNama(object.getString("nama"));
+                            model.setEmail(object.getString("email"));
+                            model.setId(object.getString("id"));
+                            model.setNohp(object.getString("nohp"));
+                            model.setNoktp(object.getString("noktp"));
+                            model.setRoleuser(object.getString("roleuser"));
 
-                            }
+                            datalist.add(model);
 
-                            adapter = new adapter(datalist);
-
-                            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(datacostumer.this);
-
-                            recyclerView.setLayoutManager(layoutManager);
-
-                            recyclerView.setAdapter(adapter);
-
-                            Log.d("pay1", "onResponse: " + response.getJSONArray("PAYLOAD"));
-
-                            if (response.getJSONArray("PAYLOAD").length() == 0){
-
-                                recyclerView.setVisibility(View.GONE);
-
-                            }
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
                         }
+                        adapter = new adapter(datalist);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(datacostumer.this);
+                        recyclerView.setLayoutManager(layoutManager);
+                        recyclerView.setAdapter(adapter);
+
+                        if (response.getJSONArray("result").length() == 0) {
+                            recyclerView.setVisibility(View.GONE);
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
+                }
 
-                    @Override
-                    public void onError(ANError anError) {
-                        Log.d("geo", "onResponse: " + anError.toString());
-                        Log.d("geo", "onResponse: " + anError.getErrorBody());
-                        Log.d("geo", "onResponse: " + anError.getErrorCode());
-                        Log.d("geo", "onResponse: " + anError.getErrorDetail());
-                    }
-                });
+                @Override
+                public void onError(ANError anError) {
+                    Toast.makeText(datacostumer.this, anError.getErrorDetail(), Toast.LENGTH_SHORT).show();
+                    Log.d("geo", "onResponse: " + anError.toString());
+                    Log.d("geo", "onResponse: " + anError.getErrorBody());
+                    Log.d("geo", "onResponse: " + anError.getErrorCode());
+                    Log.d("geo", "onResponse: " + anError.getErrorDetail());
+                }
+            });
+}
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == 23 && data.getStringExtra("refresh") != null) {
+            //refresh list
+            getDataCostumer();
+            Toast.makeText(this, "data's..", Toast.LENGTH_SHORT).show();
 
+        }
     }
 
 }
