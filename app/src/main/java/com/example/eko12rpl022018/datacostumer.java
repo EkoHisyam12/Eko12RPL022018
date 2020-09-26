@@ -113,4 +113,11 @@ public class datacostumer extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(datacostumer.this, admin.class);
+        startActivity(intent);
+        finish();
+        finishAffinity();
+    }
 }

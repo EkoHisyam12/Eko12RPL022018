@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".list_sepeda"></activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +23,7 @@
         <activity android:name=".edit_data_costumer" />
         <activity android:name=".info_costumer" />
         <activity android:name=".dashboard" />
-        <activity android:name=".login">
-
-        </activity>
+        <activity android:name=".login"></activity>
         <activity android:name=".datacostumer" />
         <activity android:name=".admin" />
         <activity android:name=".MainActivity" />

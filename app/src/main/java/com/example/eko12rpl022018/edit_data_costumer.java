@@ -23,7 +23,7 @@ import org.json.JSONObject;
 public class edit_data_costumer extends AppCompatActivity {
     TextView tvId;
     EditText etNama, etEmail, etNohp, etAlamat, etNoktp;
-    ImageView eNama, eEmail, eNohp, eAlamat, eNoktp;
+    Button eNama, eEmail, eNohp, eAlamat, eNoktp;
     Button btnEdit;
 
     @Override

@@ -62,12 +62,12 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
+        <Button
             android:id="@+id/eNama"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/editdata" />
+            android:background="@drawable/editdata" />
     </LinearLayout>
 
     <LinearLayout
@@ -97,12 +97,12 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
+        <Button
             android:id="@+id/eEmail"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/editdata" />
+            android:background="@drawable/editdata" />
     </LinearLayout>
 
     <LinearLayout
@@ -127,17 +127,17 @@
                 android:layout_marginHorizontal="5dp"
                 android:fontFamily="@font/futuramedium"
                 android:hint="No HP"
-                android:inputType="textEmailAddress"
+                android:inputType="number"
                 android:textSize="15dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
+        <Button
             android:id="@+id/eNohp"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/editdata" />
+            android:background="@drawable/editdata" />
     </LinearLayout>
 
     <LinearLayout
@@ -167,12 +167,12 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
+        <Button
             android:id="@+id/eAlamat"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/editdata" />
+            android:background="@drawable/editdata" />
     </LinearLayout>
 
     <LinearLayout
@@ -197,17 +197,17 @@
                 android:layout_marginHorizontal="5dp"
                 android:fontFamily="@font/futuramedium"
                 android:hint="No KTP"
-                android:inputType="textEmailAddress"
+                android:inputType="number"
                 android:textSize="15dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
+        <Button
             android:id="@+id/eNoktp"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/editdata" />
+            android:background="@drawable/editdata" />
     </LinearLayout>
 
     <Button

@@ -127,8 +127,7 @@ public class login extends AppCompatActivity {
                                 Log.d("e", "onError: " + anError.getErrorDetail());
                                 Log.d("e", "onError: " + anError.getResponse());
                                 Log.d("e", "onError: " + anError.getErrorCode());
-                                finish();
-                                finishAffinity();
+                                progressDialog.cancel();
                             }
                         });
 
