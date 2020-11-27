@@ -23,7 +23,6 @@ import org.json.JSONObject;
 public class edit_data_costumer extends AppCompatActivity {
     TextView tvId;
     EditText etNama, etEmail, etNohp, etAlamat, etNoktp;
-    Button eNama, eEmail, eNohp, eAlamat, eNoktp;
     Button btnEdit;
 
     @Override
@@ -38,44 +37,6 @@ public class edit_data_costumer extends AppCompatActivity {
         etAlamat = findViewById(R.id.etAlamat);
         etNoktp = findViewById(R.id.etNoktp);
         btnEdit = findViewById(R.id.btnEdit);
-
-        eNama = findViewById(R.id.eNama);
-        eEmail = findViewById(R.id.eEmail);
-        eNohp = findViewById(R.id.eNohp);
-        eAlamat = findViewById(R.id.eAlamat);
-        eNoktp = findViewById(R.id.eNoktp);
-
-        eNama.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                etNama.setEnabled(true);
-                ShowEditButton();            }
-        });
-        eNoktp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                etNoktp.setEnabled(true);
-                ShowEditButton();            }
-        });
-        eAlamat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                etAlamat.setEnabled(true);
-                ShowEditButton();            }
-        });
-        eNohp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                etNohp.setEnabled(true);
-                ShowEditButton();            }
-        });
-        eEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                etEmail.setEnabled(true);
-                ShowEditButton();           }
-        });
-
 
         Toolbar toolbar = findViewById(R.id.toolbar);
 

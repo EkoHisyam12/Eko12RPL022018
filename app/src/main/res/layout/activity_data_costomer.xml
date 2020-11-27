@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/backgroundcolor"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".datacostumer">
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -15,7 +13,13 @@
         android:layout_height="wrap_content"
         app:title="Data Costumer"
         app:titleTextColor="#ffffff"
+        app:menu="@menu/adddata"
         android:background="#0d0f11"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/refresh">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listCustomer"
@@ -23,5 +27,5 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         tools:listitem="@layout/activity_adapter" />
-
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>

@@ -1,10 +1,18 @@
 package com.example.eko12rpl022018;
 
+import android.content.ClipData;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Debug;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -38,14 +46,26 @@ public class adapter extends RecyclerView.Adapter<adapter.UserViewHolder> {
         holder.cvInbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(holder.itemView.getContext(), edit_data_costumer.class);
+                Intent in = new Intent(holder.itemView.getContext(), admin_edituser.class);
                 in.putExtra("id", dataList.get(position).getId());
                 in.putExtra("nama", dataList.get(position).getNama());
                 in.putExtra("email", dataList.get(position).getEmail());
                 in.putExtra("nohp", dataList.get(position).getNohp());
                 in.putExtra("alamat", dataList.get(position).getAlamat());
                 in.putExtra("noktp", dataList.get(position).getNoktp());
+                in.putExtra("password", dataList.get(position).getPassword());
+                in.putExtra("roleuser", dataList.get(position).getRoleuser());
                 holder.itemView.getContext().startActivity(in);
+            }
+        });
+
+        //Long Click
+        holder.cvInbox.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Log.d("LONG CLICK","BISAAAAAAAA");
+                holder.background.setBackgroundColor(Color.WHITE);
+                return true;
             }
         });
     }
@@ -55,15 +75,20 @@ public class adapter extends RecyclerView.Adapter<adapter.UserViewHolder> {
         return dataList.size();
     }
 
-    class UserViewHolder extends RecyclerView.ViewHolder{
+    public class UserViewHolder extends RecyclerView.ViewHolder{
         private TextView tvNama, tvEmail;
+
+        LinearLayout background;
         CardView cvInbox;
+        Toolbar toolbar;
 
         UserViewHolder(View itemView) {
             super(itemView);
             cvInbox = itemView.findViewById(R.id.cvInbox);
             tvNama = itemView.findViewById(R.id.tvNama);
             tvEmail = itemView.findViewById(R.id.tvEmail);
+            background = itemView.findViewById(R.id.background);
+            toolbar = itemView.findViewById(R.id.toolbar);
         }
     }
 

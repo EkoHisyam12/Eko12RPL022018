@@ -10,21 +10,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".list_sepeda"></activity>
-        <activity android:name=".SplashActivity">
+        android:theme="@style/AppTheme">
+        <activity android:name=".addsepeda"></activity>
+        <activity android:name=".editsepeda" />
+        <activity android:name=".adapter_datasepeda" />
+        <activity android:name=".data_sepeda" />
+        <activity android:name=".admin_edituser" />
+        <activity android:name=".admin_adduser" />
+        <activity android:name=".menu_admin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".BottomNav" />
+        <activity android:name=".list_sepeda" />
+        <activity android:name=".SplashActivity" >
+        </activity>
         <activity android:name=".edit_data_costumer" />
         <activity android:name=".info_costumer" />
         <activity android:name=".dashboard" />
-        <activity android:name=".login"></activity>
-        <activity android:name=".datacostumer" />
+        <activity android:name=".login" />
         <activity android:name=".admin" />
         <activity android:name=".MainActivity" />
     </application>

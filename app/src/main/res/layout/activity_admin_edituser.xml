@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".admin_edituser">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Theme.AppCompat.Light.DarkActionBar"
+        android:background="#0d0f11"
+        app:title="Edit Data"
+        app:menu="@menu/adddata_edit"
+        app:titleTextColor="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#393b44">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/eid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="40dp"
+            android:text="Id : "
+            android:textColor="#fff"
+            android:textSize="20dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="#23283a"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                android:layout_marginVertical="5dp"
+                android:paddingHorizontal="5dp"
+                android:textSize="12dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#fff"/>
+
+            <EditText
+                android:inputType="text"
+                android:focusable="true"
+                android:textColor="#fff"
+                android:id="@+id/enama"
+                android:textSize="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                >
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="#23283a"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:layout_marginVertical="5dp"
+                android:paddingHorizontal="5dp"
+                android:textSize="12dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#fff"/>
+
+            <EditText
+                android:inputType="text"
+                android:focusable="true"
+                android:textColor="#fff"
+                android:id="@+id/eemail"
+                android:textSize="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                >
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="#23283a"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alamat"
+                android:layout_marginVertical="5dp"
+                android:paddingHorizontal="5dp"
+                android:textSize="13dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#fff"/>
+
+            <EditText
+                android:textSize="15dp"
+                android:inputType="text"
+                android:focusable="true"
+                android:id="@+id/ealamat"
+                android:layout_marginTop="15dp"
+                android:textColor="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp">
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="#23283a"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No HP"
+                android:layout_marginVertical="5dp"
+                android:paddingHorizontal="5dp"
+                android:textSize="13dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#fff"/>
+
+            <EditText
+                android:focusable="true"
+                android:id="@+id/enohp"
+                android:inputType="number"
+                android:textSize="15dp"
+                android:layout_marginTop="15dp"
+                android:textColor="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp">
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="#23283a"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No KTP"
+                android:layout_marginVertical="5dp"
+                android:paddingHorizontal="5dp"
+                android:textSize="13dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#fff"/>
+
+            <EditText
+                android:textSize="15dp"
+                android:focusable="true"
+                android:id="@+id/enoktp"
+                android:inputType="number"
+                android:layout_marginTop="15dp"
+                android:textColor="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp">
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="#23283a"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:layout_marginVertical="5dp"
+                android:paddingHorizontal="5dp"
+                android:textSize="13dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#fff"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#fff"
+                >
+                <EditText
+                    android:id="@+id/epassword"
+                    android:focusable="true"
+                    android:textSize="15dp"
+                    android:inputType="textPassword"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#fff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp">
+                </EditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

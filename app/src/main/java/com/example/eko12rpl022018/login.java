@@ -45,7 +45,7 @@ public class login extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
 
         btnLogin = (Button) findViewById(R.id.btnLogin);
-        tvRegister = (TextView) findViewById(R.id.tvRegister);
+       // tvRegister = (TextView) findViewById(R.id.tvRegister);
         username = findViewById(R.id.lEmail);
         password = findViewById(R.id.lPasswprd);
 
