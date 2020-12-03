@@ -29,7 +29,6 @@
             android:cropToPadding="true"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/logo"
             android:layout_marginBottom="40dp"/>
 
 

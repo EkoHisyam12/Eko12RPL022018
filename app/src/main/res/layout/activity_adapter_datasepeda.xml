@@ -34,31 +34,32 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:padding="5dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/snama"
-                android:layout_marginBottom="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sepeda Gunung murah anti selip mantap"
+                android:text="Sepeda Gunung Kuning jskajskajs"
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:textSize="13dp"
                 android:textColor="#fff"/>
+        </LinearLayout>
 
             <TextView
                 android:layout_gravity="right"
                 android:id="@+id/sharga"
+                android:padding="5dp"
                 android:textSize="14dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
                 android:text="20.000"/>
 
-            </LinearLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

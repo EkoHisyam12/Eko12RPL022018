@@ -41,6 +41,8 @@ public class addsepeda extends AppCompatActivity {
         harga = findViewById(R.id.esharga);
         judul = findViewById(R.id.esjudul);
         iv = findViewById(R.id.iv);
+        iv.setImageURI(Uri.parse("android.resource://com.example.eko12rpl022018/drawable/logo"));
+        link = "android.resource://com.example.eko12rpl022018/drawable/logo";
 
         iv.setOnClickListener(new View.OnClickListener() {
             @Override

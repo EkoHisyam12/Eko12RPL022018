@@ -126,7 +126,7 @@ public class editsepeda extends AppCompatActivity {
                                             @Override
                                             public void onResponse(JSONObject response) {
                                                 try {
-                                                    JSONObject hasil = response.getJSONObject("hasil");
+                                                    JSONObject  hasil   = response.getJSONObject("hasil");
                                                     boolean sukses = hasil.getBoolean("respon");
                                                     if (sukses) {
                                                         Toast.makeText(editsepeda.this, "Data dihapus", Toast.LENGTH_SHORT).show();

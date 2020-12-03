@@ -69,7 +69,7 @@ public class data_sepeda extends Fragment {
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "Add Data", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), addsepeda.class);
-                startActivity(intent);
+                startActivityForResult(intent, 2);
             }
         });
 
