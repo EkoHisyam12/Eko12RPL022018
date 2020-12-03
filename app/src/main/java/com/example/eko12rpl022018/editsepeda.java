@@ -89,8 +89,6 @@ public class editsepeda extends AppCompatActivity {
                                     boolean sukses = hasil.getBoolean("respon");
                                     if (sukses) {
                                         Toast.makeText(editsepeda.this, "Edit Suskses", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(editsepeda.this, menu_admin.class);
-                                        startActivity(intent);
                                         finish();
                                     } else {
                                         Toast.makeText(editsepeda.this, "Edit gagal", Toast.LENGTH_SHORT).show();

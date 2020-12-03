@@ -25,12 +25,20 @@
         android:background="#393b44">
 
         <ImageView
+            android:id="@+id/iv"
             android:cropToPadding="true"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/logo"
-            android:id="@+id/iv"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/logo"/>
+
+        <TextView
+            android:text="Tap Image Untuk Ganti Gambar"
+            android:textColor="#fff"
+            android:textSize="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp" />
 
         <TextView
             android:id="@+id/eid"

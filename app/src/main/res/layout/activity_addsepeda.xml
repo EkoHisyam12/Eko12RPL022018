@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         style="@style/Theme.AppCompat.Light.DarkActionBar"
         android:background="#0d0f11"
-        app:title="Edit Data Sepeda"
+        app:title="Add Data Sepeda"
         app:menu="@menu/save"
         app:titleTextColor="@android:color/white" />
 
@@ -29,7 +29,16 @@
             android:cropToPadding="true"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginBottom="40dp"/>
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/logo"/>
+
+        <TextView
+            android:text="Tap Image Untuk Ganti Gambar"
+            android:textColor="#fff"
+            android:textSize="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp" />
 
 
         <RelativeLayout
